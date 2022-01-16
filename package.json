@@ -1,0 +1,11 @@
+{
+  "name": "orscalc",
+  "version": "1.0.0",
+  "description": "A calculator app created for the subject of Osnove Racunalniskih Sistemov",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Filip Joksovic, Vid Bezget",
+  "license": "ISC"
+}
