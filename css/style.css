@@ -1,0 +1,167 @@
+body {
+    background-color: #c2c2c2;
+}
+
+* {
+    background-color: #c2c2c2 !important;
+    outline: none !important;
+    border: none !important;
+}
+
+:root {
+    --neumorphic-shadow: 12px 12px 20px #b8b8b8,
+        -12px -12px 20px #cccccc;
+    --neumorphic-shadow-pressed: inset 12px 12px 20px #b8b8b8,
+        inset -12px -12px 20px #cccccc;
+}
+
+#app {
+    padding: 1rem;
+    /* margin: 1rem; */
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "result result"
+        "functionality functionality";
+}
+
+.resultDisplay {
+    grid-area: result;
+    height: 30vh;
+}
+
+.functionalityContainer {
+    grid-area: functionality;
+    height: 60vh;
+    display: grid;
+    grid-template: "special special special"
+        "logical numbers operands";
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 768px) {
+    .functionalityContainer {
+        grid-template: "logical"
+            "numbers"
+            "operands";
+
+    }
+}
+
+.specialContainer {
+    width: 100%;
+    display: flex;
+    grid-area: special;
+}
+
+.specialContainer>.neumorphic.button {
+    width: 20%;
+    height: 70%;
+
+}
+
+.numbersContainer {
+    width: 40vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-area: numbers;
+    border-radius: 1rem;
+    padding: 0 2rem;
+}
+
+.numbersContainer>.numbersRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 33%;
+    margin: 2rem 0;
+}
+
+.numbersRow>.neumorphic.button {
+    width: 30% !important;
+    /* margin: 3rem; */
+    height: 100%;
+}
+
+/* .numbersRow>button {
+    flex-grow: 1;
+    flex: 1;
+    aspect-ratio: 1/1;
+    width: 5rem;
+    height: 5rem;
+} */
+
+.logicalContainer {
+    grid-area: logical;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.logicalContainer>button {
+    flex: 33%;
+    font-size: xx-large;
+}
+
+@media only screen and (max-width:768px) {
+    .logicalContainer {
+        flex-direction: row;
+    }
+
+    .logicalContainer>button {
+        margin: .5rem !important;
+        aspect-ratio: 1/1;
+        width: 15% !important;
+    }
+}
+
+
+
+.operandsContainer {
+    grid-area: operands;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    justify-content: space-between;
+    padding: 1.5rem;
+
+}
+
+.operandsContainer>button {
+    flex: 33%;
+    font-size: xx-large;
+
+}
+
+@media only screen and (max-width:768px) {
+    .operandsContainer {
+        flex-direction: row;
+    }
+
+    .operandsContainer>button {
+        margin: .5rem !important;
+        aspect-ratio: 1/1;
+        width: 15% !important;
+    }
+}
+
+.neumorphic {
+    box-shadow: var(--neumorphic-shadow);
+}
+
+.neumorphic.button {
+    border-radius: 1rem;
+    margin: 1rem;
+    font-size: x-large;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.neumorphic-pressed {
+    box-shadow: var(--neumorphic-shadow-pressed);
+    border-radius: 1rem;
+}

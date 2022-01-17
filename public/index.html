@@ -1,18 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link href="css/style.css" rel="stylesheet" >
+    <link href="css/style.css" rel="stylesheet">
     <script src="js/index.js"></script>
 
 
     <title>ORSCalc</title>
 </head>
+
 <body>
-    Hello World
+    <div id="app">
+        <div class="resultDisplay">
+            <label>Operation Result</label>
+            <textarea id="result" class="w-100 form-control" contenteditable="false"></textarea>
+        </div>
+        <div class="functionalityContainer">
+            <div class="specialContainer neumoprhic-pressed">
+                <button class = "neumorphic button">(</button>
+                <button class = "neumorphic button">)</button>
+                <button class = "neumorphic button">sqrt</button>
+                <button class = "neumorphic button">^</button>
+                <button class = "neumorphic button">%</button>
+
+            </div>
+            <div class="logicalContainer  neumorphic-pressed">
+                <button class = "neumorphic button">AND</button>
+                <button class = "neumorphic button">NOT</button>
+                <button class = "neumorphic button">OR</button>
+                <button class = "neumorphic button">XOR</button>
+            </div>
+            <div class="numbersContainer neumorphic-pressed">
+                <div class="numbersRow">
+                    <button class = "neumorphic button">7</button>
+                    <button class = "neumorphic button">8</button>
+                    <button class = "neumorphic button">9</button>
+                </div>
+                <div class="numbersRow">
+                    <button class = "neumorphic button">4</button>
+                    <button class = "neumorphic button">5</button>
+                    <button class = "neumorphic button">6</button>
+                </div>
+                <div class="numbersRow">
+                    <button class = "neumorphic button">1</button>
+                    <button class = "neumorphic button">2</button>
+                    <button class = "neumorphic button">3</button>
+                </div>
+                <div class="numbersRow">
+                    <button class = "neumorphic button">+/-</button>
+                    <button class = "neumorphic button">0</button>
+                    <button class = "neumorphic button">.</button>
+                </div>
+
+            </div>
+            <div class="operandsContainer neumorphic-pressed">
+                <button class = "neumorphic button">+</button>
+                <button class = "neumorphic button">-</button>
+                <button class = "neumorphic button">*</button>
+                <button class = "neumorphic button">/</button>
+            </div>
+        </div>
+
+    </div>
 </body>
+
 </html>
