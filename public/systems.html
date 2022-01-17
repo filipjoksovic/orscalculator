@@ -26,14 +26,14 @@
         </div>
         <div class = "result-container">
             <label>Result</label>
-            <textarea id = "expression-area" class = "neumorphic form-control"></textarea>
+            <textarea id = "result-area" class = "neumorphic form-control"></textarea>
 
         </div>
         <div class="number-systems">
-            <button class="neumorphic button" onclick = "addToExpression('DEC')">DEC</button>
-            <button class="neumorphic button" onclick = "addToExpression('BIN')">BIN</button>
-            <button class="neumorphic button" onclick = "addToExpression('HEX')">HEX</button>
-            <button class="neumorphic button" onclick = "addToExpression('OCT')">OCT</button>
+            <button class="neumorphic button" onclick = "setSystem('DEC')">DEC</button>
+            <button class="neumorphic button" onclick = "setSystem('BIN')">BIN</button>
+            <button class="neumorphic button" onclick = "setSystem('HEX')">HEX</button>
+            <button class="neumorphic button" onclick = "setSystem('OCT')">OCT</button>
         </div>
         <div class="numbers">
             <button class="neumorphic button" onclick = "addToExpression('9')" >9</button>
@@ -45,10 +45,21 @@
             <button class="neumorphic button" onclick = "addToExpression('3')">3</button>
             <button class="neumorphic button" onclick = "addToExpression('2')">2</button>
             <button class="neumorphic button" onclick = "addToExpression('1')">1</button>
+            <button class="neumorphic button">-</button>
+            <button class="neumorphic button" onclick = "addToExpression('0')">0</button>
+            <button class="neumorphic button">-</button>
+            <button class="neumorphic button" onclick = "addToExpression('A')">A</button>
+            <button class="neumorphic button" onclick = "addToExpression('B')">B</button>
+            <button class="neumorphic button" onclick = "addToExpression('C')">C</button>
+            <button class="neumorphic button" onclick = "addToExpression('D')">D</button>
+            <button class="neumorphic button" onclick = "addToExpression('E')">E</button>
+            <button class="neumorphic button" onclick = "addToExpression('F')">F</button>
+
+
         </div>
         <div class="helpers">
-            <button class="neumorphic button">C</button>
-
+            <button class="neumorphic button" onclick = "clearExpression()">C</button>
+            <button class="neumorphic button" onclick = "calculateExpression()">=</button>
         </div>
     </div>
 </body>
