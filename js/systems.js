@@ -103,7 +103,7 @@ function calculateExpression() {
         } else {
             console.log('err')
         }
-        result = expression + " = " + (result == "") ? "Error" : result
+        result = expression + " = " + result
         return result
     }
 }

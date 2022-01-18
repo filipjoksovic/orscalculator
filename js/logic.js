@@ -56,11 +56,12 @@ function parseExpression(expression) {
     let b_bits = convertToBits(b)
     //make the ammount of bits the same
     equalizeBits(a_bits, b_bits)
-
+    console.log(equalizeBits(a_bits,b_bits))
     let res;
     //pick a selected operation and to the function    
     if (new RegExp("\\b"+"NAND"+"\\b").test(selectedOperator)) {
         res = nand(a_bits, b_bits)
+        console.log("nand")
     } else if (new RegExp("\\b"+"XOR"+"\\b").test(selectedOperator)) {
         res = xor(a_bits, b_bits)
     } else if (new RegExp("\\b"+"NOR"+"\\b").test(selectedOperator)) {
@@ -70,11 +71,15 @@ function parseExpression(expression) {
     } else if (new RegExp("\\b"+"OR"+"\\b").test(selectedOperator)) {
         res = or(a_bits, b_bits)
     } else if (new RegExp("\\b"+"AND"+"\\b").test(selectedOperator)) {
-        res = nand(a_bits, b_bits)
+        res = and(a_bits, b_bits)
     } else if (new RegExp("\\b"+"XNOR"+"\\b").test(selectedOperator)) {
         res = xnor(a_bits, b_bits)
     }
     console.log(res)
+    for(let i = 0; i < res.length; i++){
+        console.log(res[i])
+        document.getElementById("result-area").value += res[i]
+    }
     return res
 }
 function convertToBits(str) {
