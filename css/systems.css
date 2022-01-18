@@ -48,6 +48,38 @@ body {
 #nav {
     height: 10vh;
 }
+@media only screen and (max-width:768px){
+    #nav{
+        justify-content: center !important;
+        overflow: hidden;
+    }
+    #upNav{
+        display: none !important;
+    }
+    #upNav{
+        display: none !important;
+    }
+    #upMob{
+        display: unset !important;
+        position: sticky;
+        bottom: 15px;
+        background-color: rgb(136, 136, 231) !important;
+        width: 6rem;
+        height: 3rem;
+        /* border-radius: 100%; */
+        text-align: center;
+        vertical-align: middle;
+        outline: 3px solid rgb(104, 104, 190) !important;
+    }
+    #upMob::after{
+        content: "Upload";
+        position: relative;
+        /* top:rem; */
+        top: .5rem;
+        color:white;
+        font-size: large;
+    }
+}
 
 .app {
     height: 90vh;
@@ -80,11 +112,14 @@ body {
 #nav {
     width: 100%;
     height: 10vh;
+    display: flex;
+    justify-content: space-between;
 }
 
 #nav>.nav-links {
     display: flex;
     padding: 1rem !important;
+    align-items: center;
 }
 
 #nav>.nav-links>.nav-link {
@@ -92,7 +127,10 @@ body {
     border-radius: 1rem;
     cursor: pointer;
 }
-
+.file-label{
+    color:#363636 !important;
+    font-size: unset !important;
+}
 .expression-container {
     grid-area: expression;
     display: flex;
@@ -113,7 +151,8 @@ label{
 .number-systems {
     grid-area: systems;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     padding: 2rem;
     gap: 2rem;
 }
