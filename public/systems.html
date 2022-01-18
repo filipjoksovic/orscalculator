@@ -18,7 +18,7 @@
             <li class="neumorphic nav-link"><a href="/systems">Number Systems</a></li>
             <li class="neumorphic nav-link"><a href="/logic">Logic gates</a></li>
         </ul>
-        <ul class = "nav-links">
+        <ul class = "nav-links" id = "upNav">
             <li class = "neumorphic nav-link">
                 <label class = "file-label" for = "fUp">Upload a file</label>
                 <input id = "fUp" class = "d-none" name = "input"  type = "file" accept=".txt">
@@ -26,6 +26,8 @@
         </ul>
     </nav>
     <div class = "app">
+        <label id = "upMob" class = "file-label" for = "fUp"></label>
+
         <div class = "expression-container">
             <label>Expression</label>
             <textarea id = "expression-area" class = "neumorphic form-control"></textarea>
