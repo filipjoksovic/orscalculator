@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number systems</title>
+    <script src="./js/jquery.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link href="css/logic.css" rel="stylesheet">
+    <script src="js/logic.js"></script>
+</head>
+
+<body>
+    <nav id="nav">
+        <ul class='nav-links'>
+            <li class="neumorphic nav-link"><a href="/">Expression calculator</a></li>
+            <li class="neumorphic nav-link"><a href="/systems">Number Systems</a></li>
+            <li class="neumorphic nav-link"><a href="/logic">Logic gates</a></li>
+        </ul>
+    </nav>
+    <div class="app">
+        <div class="expression-container">
+            <label>Expression</label>
+            <textarea id="expression-area" class="neumorphic form-control"></textarea>
+        </div>
+        <div class="result-container">
+            <label>Result</label>
+            <textarea id="result-area" class="neumorphic form-control"></textarea>
+
+        </div>
+        <div class="number-systems neumorphic-pressed">
+            <button class="neumorphic button" onclick="setSystem('DEC')">DEC</button>
+            <button class="neumorphic button" onclick="setSystem('BIN')">BIN</button>
+            <button class="neumorphic button" onclick="setSystem('HEX')">HEX</button>
+            <button class="neumorphic button" onclick="setSystem('OCT')">OCT</button>
+        </div>
+        <div class="numbers neumorphic-pressed">
+            <button class="neumorphic button" onclick="addToExpression('9')">9</button>
+            <button class="neumorphic button" onclick="addToExpression('8')">8</button>
+            <button class="neumorphic button" onclick="addToExpression('7')">7</button>
+            <button class="neumorphic button" onclick="addToExpression('6')">6</button>
+            <button class="neumorphic button" onclick="addToExpression('5')">5</button>
+            <button class="neumorphic button" onclick="addToExpression('4')">4</button>
+            <button class="neumorphic button" onclick="addToExpression('3')">3</button>
+            <button class="neumorphic button" onclick="addToExpression('2')">2</button>
+            <button class="neumorphic button" onclick="addToExpression('1')">1</button>
+            <button class="neumorphic button">-</button>
+            <button class="neumorphic button" onclick="addToExpression('0')">0</button>
+            <button class="neumorphic button">-</button>
+            <button class="neumorphic button" onclick="addToExpression('A')">A</button>
+            <button class="neumorphic button" onclick="addToExpression('B')">B</button>
+            <button class="neumorphic button" onclick="addToExpression('C')">C</button>
+            <button class="neumorphic button" onclick="addToExpression('D')">D</button>
+            <button class="neumorphic button" onclick="addToExpression('E')">E</button>
+            <button class="neumorphic button" onclick="addToExpression('F')">F</button>
+        </div>
+        <div class="operators neumorphic-pressed">
+            <button class="neumorphic button" onclick = "setOperator('AND')">AND</button>
+            <button class="neumorphic button" onclick = "setOperator('OR')">OR</button>
+            <button class="neumorphic button" onclick = "setOperator('NOT')">NOT</button>
+            <button class="neumorphic button" onclick = "setOperator('NAND')">NAND</button>
+            <button class="neumorphic button" onclick = "setOperator('NOR')">NOR</button>
+            <button class="neumorphic button" onclick = "setOperator('XOR')">XOR</button>
+            <button class="neumorphic button" onclick = "setOperator('XNOR')">XNOR</button>
+            <button class="neumorphic button" onclick="clearExpression()">Clear</button>
+            <button class="neumorphic button" onclick="calculateExpression()">=</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,10 +1,9 @@
 :root {
-    --neumorphic-shadow: 
-    inset 12px 12px 20px rgba(184, 184, 184, 0),
+    --neumorphic-shadow:
+        inset 12px 12px 20px rgba(184, 184, 184, 0),
         inset -12px -12px 20px rgba(204, 204, 204, 0),
-    12px 12px 20px rgba(184, 184, 184, 1),
-        -12px -12px 20px rgba(204, 204, 204, 1)
-        ;
+        12px 12px 20px rgba(184, 184, 184, 1),
+        -12px -12px 20px rgba(204, 204, 204, 1);
 
     --neumorphic-shadow-pressed: inset 12px 12px 20px rgba(184, 184, 184, 1),
         inset -12px -12px 20px rgba(204, 204, 204, 1),
@@ -19,13 +18,13 @@
     box-shadow: var(--neumorphic-shadow);
     transition: box-shadow 250ms ease-in-out;
 }
+
 .neumorphic:hover {
     box-shadow: var(--neumorphic-shadow-pressed);
 }
 
 .neumorphic.button {
     border-radius: 1rem;
-    margin: 1rem;
     font-size: x-large;
     text-align: center;
     vertical-align: middle;
@@ -35,28 +34,49 @@
     box-shadow: var(--neumorphic-shadow-pressed);
     border-radius: 1rem;
 }
+
 .nav-link>a {
     text-decoration: none;
     color: #363636;
     text-align: center;
 }
 
-body{
+body {
     background-color: #c2c2c2;
 }
-#nav{
+
+#nav {
     height: 10vh;
 }
-.app{
+
+.app {
     height: 90vh;
     display: grid;
-    gap:2rem;
+    gap: 2rem;
     padding: 1rem;
     grid-template-areas: "expression result result"
-                        "systems numbers helpers";
+        "systems numbers helpers";
     grid-template-rows: 1fr 5fr;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
+
+@media only screen and (max-width:768px) {
+    .app {
+        grid-template-areas: "expression result"
+            "systems systems"
+            "numbers numbers"
+            "helpers helpers"
+        ;
+        grid-template-rows: 1fr 1fr 5fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        /* gap: .5rem; */
+        row-gap: .5rem !important;
+        column-gap: 2rem;
+
+
+    }
+}
+
 #nav {
     width: 100%;
     height: 10vh;
@@ -72,32 +92,63 @@ body{
     border-radius: 1rem;
     cursor: pointer;
 }
-.expression-container{
+
+.expression-container {
     grid-area: expression;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-.result-container{
+
+.result-container {
     grid-area: result;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-.number-systems{
+label{
+    font-size: large;
+}
+
+.number-systems {
     grid-area: systems;
     display: grid;
-    grid-template-rows: repeat(4,1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 2rem;
+    gap: 2rem;
 }
-.number-systems{
+
+@media only screen and (max-width:768px) {
+    .number-systems {
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.numbers {
+    grid-area: numbers;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.numbers>button {
     padding: 1rem;
 }
 
-.numbers{
-    grid-area: numbers;   
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    align-items: center;
-}
-.numbers > button{
-    padding:1rem;
-}
-.helpers{
+.helpers {
     grid-area: helpers;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+@media only screen and (max-width:768px) {
+    .helpers {
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

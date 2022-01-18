@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet">
-    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/mathjs@10.1.0/lib/browser/math.js"></script>
+    <script src="js/main.js" defer></script>
+
 
 
     <title>ORSCalc</title>
@@ -23,58 +25,54 @@
             <li class="neumorphic nav-link"><a href="/systems">Number Systems</a></li>
             <li class="neumorphic nav-link"><a href="/logic">Logic gates</a></li>
         </ul>
+        <ul class = "nav-links">
+            <li class = "neumorphic nav-link">
+                <label class = "file-label" for = "fUp">Upload a file</label>
+                <input id = "fUp" class = "d-none" name = "input"  type = "file">
+            </li>
+        </ul>
     </nav>
     <div id="app" class="expressionCalculator">
 
         <div class="expressionDisplay">
             <label class="my-3">Expression</label>
-            <textarea id="expression" class="w-100 form-control neumorphic" contenteditable="false"></textarea>
+            <textarea id="expression" class="w-100  neumorphic"></textarea>
         </div>
         <div class="resultDisplay">
-            <label class="my-3">Operation Result</label>
-            <textarea id="result" class="w-100 form-control neumorphic" contenteditable="false"></textarea>
+            <label class="my-3">Result</label>
+            <textarea id="result" class="w-100  neumorphic"></textarea>
         </div>
         <div class="specialContainer neumorphic-pressed">
-            <button class="neumorphic button" onclick="eadd('')">(</button>
-            <button class="neumorphic button" onclick="eadd('')">)</button>
-            <button class="neumorphic button" onclick="eadd('')">sqrt</button>
-            <button class="neumorphic button" onclick="eadd('')">^</button>
-            <button class="neumorphic button" onclick="eadd('')">%</button>
+            <button class="neumorphic button" onclick="addToExpression('(')">(</button>
+            <button class="neumorphic button" onclick="addToExpression(')')">)</button>
+            <button class="neumorphic button" onclick="addToExpression('sqrt(')">sqrt</button>
+            <button class="neumorphic button" onclick="addToExpression('^')">^</button>
+            <button class="neumorphic button" onclick="addToExpression('%')">%</button>
         </div>
-        <!-- <div class="logicalContainer  neumorphic-pressed">
-                <button class = "neumorphic button">AND</button>
-                <button class = "neumorphic button">NOT</button>
-                <button class = "neumorphic button">OR</button>
-                <button class = "neumorphic button">XOR</button>
-            </div> -->
         <div class="numbersContainer neumorphic-pressed">
-            <div class="numbersRow">
-                <button class="neumorphic button">7</button>
-                <button class="neumorphic button">8</button>
-                <button class="neumorphic button">9</button>
-            </div>
-            <div class="numbersRow">
-                <button class="neumorphic button">4</button>
-                <button class="neumorphic button">5</button>
-                <button class="neumorphic button">6</button>
-            </div>
-            <div class="numbersRow">
-                <button class="neumorphic button">1</button>
-                <button class="neumorphic button">2</button>
-                <button class="neumorphic button">3</button>
-            </div>
-            <div class="numbersRow">
-                <button class="neumorphic button">+/-</button>
-                <button class="neumorphic button">0</button>
-                <button class="neumorphic button">.</button>
-            </div>
+            <button class="neumorphic button" onclick="addToExpression('7')">7</button>
+            <button class="neumorphic button" onclick="addToExpression('8')">8</button>
+            <button class="neumorphic button" onclick="addToExpression('9')">9</button>
+            <button class="neumorphic button" onclick="addToExpression('4')">4</button>
+            <button class="neumorphic button" onclick="addToExpression('5')">5</button>
+            <button class="neumorphic button" onclick="addToExpression('6')">6</button>
+            <button class="neumorphic button" onclick="addToExpression('1')">1</button>
+            <button class="neumorphic button" onclick="addToExpression('2')">2</button>
+            <button class="neumorphic button" onclick="addToExpression('3')">3</button>
+            <button class="neumorphic button">+/-</button>
+            <button class="neumorphic button" onclick="addToExpression('0')">0</button>
+            <button class="neumorphic button" onclick="addToExpression('.')">.</button>
+            <button class="neumorphic button" onclick="clearExpression()">C</button>
+            <button class="neumorphic button" onclick="removeLastChar()">DEL</button>
+            <button class="neumorphic button" onclick="evaluateExpression()">=</button>
+
 
         </div>
         <div class="operandsContainer neumorphic-pressed">
-            <button class="neumorphic button">+</button>
-            <button class="neumorphic button">-</button>
-            <button class="neumorphic button">*</button>
-            <button class="neumorphic button">/</button>
+            <button class="neumorphic button" onclick="addToExpression('+')">+</button>
+            <button class="neumorphic button" onclick="addToExpression('-')">-</button>
+            <button class="neumorphic button" onclick="addToExpression('*')">*</button>
+            <button class="neumorphic button" onclick="addToExpression('/')">/</button>
         </div>
 
     </div>
