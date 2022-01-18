@@ -80,11 +80,14 @@ body {
 #nav {
     width: 100%;
     height: 10vh;
+    display: flex;
+    justify-content: space-between;
 }
 
 #nav>.nav-links {
     display: flex;
     padding: 1rem !important;
+    align-items: center;
 }
 
 #nav>.nav-links>.nav-link {
@@ -92,7 +95,10 @@ body {
     border-radius: 1rem;
     cursor: pointer;
 }
-
+.file-label{
+    color:#363636 !important;
+    font-size: unset !important;
+}
 .expression-container {
     grid-area: expression;
     display: flex;
