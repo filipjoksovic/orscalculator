@@ -19,6 +19,10 @@ console.log(xnor(a, b))
 
 let operators = ["AND", "OR", "NOT", "NAND", "NOR", "XOR", "XNOR"]
 
+$(document).ready(function () {
+    chosenSystem = "BIN"
+    setSystem(chosenSystem)
+})
 
 function parseExpression(expression) {
     let found = false;
@@ -73,8 +77,13 @@ function convertToBits(str) {
 function setSystem(sys) {
     chosenSystem = sys
     $(".neumorphic.button").removeClass("neumorphic-pressed")
-    $(event.target).toggleClass("neumorphic-pressed")
-    console.log($(event.target))
+    $("#" + sys).toggleClass("neumorphic-pressed")
+
+    setButtons(sys)
+}
+function setButtons(sys) {
+    $(".number").prop("disabled",true)
+    $("."+sys.toLowerCase()).prop("disabled",false)
 }
 function addToExpression(val) {
     $("#expression-area").val($("#expression-area").val() + val)
